@@ -1,0 +1,87 @@
+curl -X POST -H "Content-Type: application/json" -d '{
+  "get_started": {"payload":
+    "GET_STARTED_BOTSITO"
+  }
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAleLQOPIZAEBAP0y8uoAnRRpQWRDstG2oMpHpBAI0WVdzGvEeaMSttDJhMYJRMlk2dQVZASLkhsZBzHo1QLDoF4ut3bRXXmq2cxgZB6lzD3UuIrDbeLQpAl2NZAOvrzSLyqfK22q4rEIP99ZB1R4VI6odWLLKaedHezIUeADfQgZDZD"
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "greeting": [
+      {
+        "locale": "default",
+        "text": "Hola {{user_first_name}}, Soy botsito y te recomiendo las mejores pizzas"
+      },
+      {
+        "locale": "en_US",
+        "text": "Hi {{user_first_name}}, Im botsito"
+      },
+    ]
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAleLQOPIZAEBAP0y8uoAnRRpQWRDstG2oMpHpBAI0WVdzGvEeaMSttDJhMYJRMlk2dQVZASLkhsZBzHo1QLDoF4ut3bRXXmq2cxgZB6lzD3UuIrDbeLQpAl2NZAOvrzSLyqfK22q4rEIP99ZB1R4VI6odWLLKaedHezIUeADfQgZDZD"
+
+curl -X POST -H "Content-Type: application/json" -d '{
+    "persistent_menu": [
+      {
+        "locale": "default",
+        "composer_input_disabled": false,
+        "call_to_actions": [
+          {
+            "title": "BotSito",
+            "type": "nested",
+            "call_to_actions": [
+              {
+                "title": "Acerca",
+                "type": "postback",
+                "payload": "ABOUT_PAYLOAD"
+              },
+              {
+                "title": "Sucursales",
+                "type": "postback",
+                "payload": "SUCURSAL_PAYLOAD"
+              },
+              {
+                "title": "Contacto",
+                "type": "postback",
+                "payload": "CONTAC_PAYLOAD"
+              },
+              {
+                "title": "Ayuda",
+                "type": "postback",
+                "payload": "HELP_PAYLOAD"
+              }
+            ]
+          },
+          {
+            "title": "Menu de productos",
+            "type": "nested",
+            "call_to_actions": [
+              {
+                "title": "Pizzas",
+                "type": "postback",
+                "payload": "PIZZAS_PAYLOAD"
+              },
+              {
+                "title": "Especialidades",
+                "type": "postback",
+                "payload": "SPECIALITY_PAYLOAD"
+              },
+              {
+                "title": "Bebidas",
+                "type": "postback",
+                "payload": "DRINK_PAYLOAD"
+              },
+              {
+                "title": "Promociones",
+                "type": "postback",
+                "payload": "PROMOTIONS_PAYLOAD"
+              }
+            ]
+          },
+          {
+            "title": "Pagina web",
+            "type": "web_url",
+            "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "webview_height_ratio": "full"
+          }
+        ]
+      }
+    ]
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAleLQOPIZAEBAP0y8uoAnRRpQWRDstG2oMpHpBAI0WVdzGvEeaMSttDJhMYJRMlk2dQVZASLkhsZBzHo1QLDoF4ut3bRXXmq2cxgZB6lzD3UuIrDbeLQpAl2NZAOvrzSLyqfK22q4rEIP99ZB1R4VI6odWLLKaedHezIUeADfQgZDZD"
